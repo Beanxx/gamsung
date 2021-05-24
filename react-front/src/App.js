@@ -1,25 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
+import {useState, useEffect} from "react";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    const [articles, setArticles] = useState([])
+    useEffect(() => {
+        fetch('http://192.168.219.101:7000/', {
+            'method': 'GET',
+            headers: {
+                'Content-Type': 'applications/json'
+            }
+        }).then(resp => resp.json()).then(resp => setArticles(resp)).catch(error => console.log(error))
+    }, [])
+    return (
+        <div className="App">
+            <h1>Flask and ReactJS</h1>
+            {
+                articles.map(article => {
+                    return(
+                        <div key={article.group}>
+                            <h2>{article.group}</h2>
+                            <h2>{article.member}</h2>
+                            <h2>{article.project}</h2>
+                        </div>
+                    )
+                })
+            }
+        </div>
+    );
 }
 
 export default App;
