@@ -9,7 +9,7 @@ load_dotenv()
 MONGODB_IP = os.environ['MONGODB_IP']
 MONGODB_PORT = os.environ['MONGODB_PORT']
 db = None
-client = MongoClient(MONGODB_IP, int(MONGODB_PORT))
+client = MongoClient('localhost', 27017)
 
 
 def create_app(database_name='sparta'):

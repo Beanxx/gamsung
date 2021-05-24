@@ -5,6 +5,7 @@ function App() {
 
     const [articles, setArticles] = useState([])
     useEffect(() => {
+        //flask 서버 ip & port
         fetch('http://192.168.219.101:7000/', {
             'method': 'GET',
             headers: {
