@@ -6,20 +6,19 @@ from flask.cli import load_dotenv
 from flask_cors import CORS
 
 load_dotenv()
-MONGODB_IP = os.environ['MONGODB_IP']
-MONGODB_PORT = os.environ['MONGODB_PORT']
+MONGODB_HOST = os.environ['MONGODB_HOST']
 db = None
-client = MongoClient('localhost', 27017)
+client = MongoClient(MONGODB_HOST)
 
 
-def create_app(database_name='sparta'):
+def create_app(database_name='cafe'):
     app = Flask(__name__)
     CORS(app)
 
     global db
     db = client.get_database(database_name)
 
-    from views import main
+    from app.views import main
     app.register_blueprint(main.bp)
 
     return app
