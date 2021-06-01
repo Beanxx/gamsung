@@ -6,7 +6,7 @@ function App() {
     const [articles, setArticles] = useState([])
     useEffect(() => {
         //flask 서버 ip & port
-        fetch('http://192.168.219.101:7000/', {
+        fetch(process.env.REACT_APP_FLASK_HOST, {
             'method': 'GET',
             headers: {
                 'Content-Type': 'applications/json'
@@ -19,10 +19,9 @@ function App() {
             {
                 articles.map(article => {
                     return(
-                        <div key={article.group}>
-                            <h2>{article.group}</h2>
-                            <h2>{article.member}</h2>
-                            <h2>{article.project}</h2>
+                        <div key={article.id}>
+                            <h2>id : {article.id}</h2>
+                            <h2>pw: {article.pw}</h2>
                         </div>
                     )
                 })
