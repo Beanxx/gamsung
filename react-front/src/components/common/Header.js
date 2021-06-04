@@ -8,6 +8,8 @@ const HeaderBlock = styled.div`
   width: 100%;
   background: #ced4da;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
+  top: 0;
+  left: 0;
 `;
 
 /**

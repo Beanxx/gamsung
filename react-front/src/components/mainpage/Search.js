@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import palette from '../../lib/styles/palette';
 
 const ImageBlock = styled.div`
-  position: fixed;
+  position: relative;
   width: 100%;
-  height: 350px;
+  height:200px;
   background: #868e96;
 `;
 
