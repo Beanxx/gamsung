@@ -1,8 +1,7 @@
 import './App.css';
 import {useState, useEffect} from "react";
-import MainPage from "./page/MainPage";
-import { BrowserRouter as Router } from 'react-router-dom';
-
+import { Route } from 'react-router-dom';
+import MainPage from "./pages/MainPage";
 
 function App() {
 
@@ -16,11 +15,11 @@ function App() {
             }
         }).then(resp => resp.json()).then(resp => setArticles(resp)).catch(error => console.log(error))
     }, [])
+
     return (
         <div className="App">
-            <Router>
-                <MainPage/>
-            </Router>
+            <Route component={MainPage} path={"/main"}/>
+
             {
                 articles.map(article => {
                     return(
