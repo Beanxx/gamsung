@@ -1,5 +1,8 @@
 import './App.css';
 import {useState, useEffect} from "react";
+import MainPage from "./page/MainPage";
+import { BrowserRouter as Router } from 'react-router-dom';
+
 
 function App() {
 
@@ -15,7 +18,9 @@ function App() {
     }, [])
     return (
         <div className="App">
-            <h1>Flask and ReactJS</h1>
+            <Router>
+                <MainPage/>
+            </Router>
             {
                 articles.map(article => {
                     return(

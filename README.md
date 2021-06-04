@@ -44,7 +44,7 @@ $ poetry install
 #### pip
 
 ```shell
-$ pip install -r requirements.txt
+$ pip install -r requirement.txt
 ```
 
 #### npm
