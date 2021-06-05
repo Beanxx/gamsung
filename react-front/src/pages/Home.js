@@ -1,19 +1,14 @@
 import React from "react";
+import Search from "../components/mainpage/Search";
+import Place from "../components/mainpage/Place";
+import RandomStore from "../components/mainpage/RandomStore";
 
-function Home({articles}) {
+function Home() {
     return (
         <div className="App">
-            <h1>Flask and ReactJS</h1>
-            {
-                articles.map(article => {
-                    return (
-                        <div key={article.id}>
-                            <h2>id : {article.id}</h2>
-                            <h2>pw: {article.pw}</h2>
-                        </div>
-                    )
-                })
-            }
+            <Search/>
+            <Place/>
+            <RandomStore/>
         </div>
     );
 }

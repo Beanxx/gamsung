@@ -9,9 +9,7 @@ const MainPage = () => {
     return (
         <>
             <Header/>
-            <Search/>
-            <Place/>
-            <RandomStore/>
+
         </>
     );
 };
