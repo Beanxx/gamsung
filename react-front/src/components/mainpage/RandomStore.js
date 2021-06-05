@@ -7,7 +7,8 @@ import './MainPage.css';
 
 const StoreBlock = styled.div`
   position: relative;
-  width: 100%;
+  width: 70%;
+  margin: 0 auto;
   height: 400px;
   background: #212529;
 `;

@@ -10,11 +10,19 @@ import {signIn} from "./auth/auth";
 import styled from "styled-components";
 import Responsive from "./components/common/Responsive";
 import Button from "./components/common/Button";
+import { useMediaQuery } from 'react-responsive'
+import styles from './styles/header/header.css'
+
+// const Example = () => {
+//   const isDesktopOrLaptop = useMediaQuery(
+//      styles.headerContainer
+//   )
 
 const HeaderBlock = styled.div`
   display: block;
-  width: 100%;
-  height: 80px;
+  margin: 0 auto;
+  width: 70%;
+  height: 70px;
   background: #ced4da;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
 `;
@@ -26,7 +34,7 @@ const Wrapper = styled(Responsive)`
   height: 4rem;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* 자식 엘리먼트 사이에 여백을 최대로 설정 */
+  justify-content: space-around; /* 자식 엘리먼트 사이에 여백을 최대로 설정 */
   .logo {
     font-size: 1.125rem;
     font-weight: 800;
@@ -38,12 +46,6 @@ const Wrapper = styled(Responsive)`
   }
 `;
 
-/**
- * 헤더가 fixed로 되어 있기 때문에 페이지의 컨텐츠가 4rem 아래 나타나도록 해주는 컴포넌트
- */
-const Spacer = styled.div`
-  height: 4rem;
-`;
 
 function App() {
     const [user, setUser] = useState(null);
@@ -67,26 +69,24 @@ function App() {
         <Router>
             <HeaderBlock>
                 <Wrapper>
-                        <Link to="/">
-                            <div className="logo">GAMSUNG</div>
+                    <Link to="/" className="default-link">
+                        <div className="logo">GAMSUNG</div>
+                    </Link>
+                    {authenticated ? (
+                        <LogoutButton logout={logout}/>
+                    ) : (
+                        <Link to="/login" className="default-link">
+                            <div className="right">
+                                <Button>LOGIN</Button>
+                            </div>
                         </Link>
-                        {authenticated ? (
-                            <LogoutButton logout={logout}/>
-                        ) : (
-                            <Link to="/login">
-                                <div className="right">
-                                    <Button>LOGIN</Button>
-                                </div>
-                            </Link>
-                        )}
-                        <Link to="/myPage">
-                            <button>마이페이지</button>
-                        </Link>
-
+                    )}
+                    {/*<Link to="/myPage" className="default-link">*/}
+                    {/*    <button>마이페이지</button>*/}
+                    {/*</Link>*/}
                 </Wrapper>
-                <Spacer/>
             </HeaderBlock>
-            <hr/>
+
             <main>
                 <Switch>
                     <Route
@@ -109,8 +109,7 @@ function App() {
                 </Switch>
             </main>
         </Router>
-    )
-        ;
+    );
 }
 
 export default App;

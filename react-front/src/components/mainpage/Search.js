@@ -4,7 +4,8 @@ import palette from '../../lib/styles/palette';
 
 const ImageBlock = styled.div`
   position: relative;
-  width: 100%;
+  width: 70%;
+  margin: 0 auto;
   height:200px;
   background: #868e96;
 `;

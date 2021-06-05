@@ -5,7 +5,8 @@ import './MainPage.css';
 
 const PlaceBlock = styled.div`
   position: relative;
-  width: 100%;
+  width: 70%;
+  margin: 0 auto;
   height: 120px;
   background: #f8f9fa;
 `;
