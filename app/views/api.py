@@ -16,6 +16,7 @@ bp = Blueprint(
 @bp.route('/register', methods=['POST'])
 def register():
     data = json.loads(request.data)
+    print(data)
     id = data['id']
     pw = data['pw']
     place = data['place']
