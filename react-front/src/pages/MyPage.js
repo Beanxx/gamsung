@@ -1,6 +1,6 @@
 import React from "react";
-import TabList from "../components/mypage/tabList";
-import MyInfo from "../components/mypage/infomation";
+import TabList from "../components/mypage/TabList";
+import MyInfo from "../components/mypage/Infomation";
 import styled from "styled-components";
 
 const MypageDiv = styled.div`
