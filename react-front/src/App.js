@@ -11,7 +11,7 @@ import styled from "styled-components";
 import Responsive from "./components/common/Responsive";
 import Button from "./components/common/Button";
 import { useMediaQuery } from 'react-responsive'
-import styles from './styles/header/header.css'
+// import styles from './styles/header/header.css'
 
 // const Example = () => {
 //   const isDesktopOrLaptop = useMediaQuery(
@@ -19,13 +19,15 @@ import styles from './styles/header/header.css'
 //   )
 
 const HeaderBlock = styled.div`
-  display: block;
+  position: fixed;
   margin: 0 auto;
   width: 70%;
-  height: 70px;
   background: #ced4da;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
+  top: 0;
+  left: 0;
+  right: 0;
 `;
+
 
 /**
  * Responsive 컴포넌트의 속성에 스타일을 추가해서 새로운 컴포넌트 생성

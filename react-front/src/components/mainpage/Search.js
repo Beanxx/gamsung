@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import palette from '../../lib/styles/palette';
 
 const ImageBlock = styled.div`
-  position: relative;
+  display: flex;
   width: 70%;
   margin: 0 auto;
   height:200px;
@@ -13,7 +13,7 @@ const ImageBlock = styled.div`
 const SearchBlock = styled.div`
   width: 100%;
   height: 100%;
-  display:flex;
+  display: flex;
   justify-content:center;
   align-items:center;
   border-top: 1px solid ${palette.gray[2]};

@@ -6,7 +6,7 @@ import './MainPage.css';
 
 
 const StoreBlock = styled.div`
-  position: relative;
+  display: flex;
   width: 70%;
   margin: 0 auto;
   height: 400px;

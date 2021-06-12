@@ -7,9 +7,9 @@ const HeaderBlock = styled.div`
   position: fixed;
   width: 70%;
   background: #ced4da;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
   top: 0;
   left: 0;
+  right: 0;
 `;
 
 /**
@@ -39,19 +39,19 @@ const Spacer = styled.div`
 `;
 
 const Header = () => {
-  return (
-    <>
-      <HeaderBlock>
-        <Wrapper>
-            <div className="logo">GAMSUNG</div>
-            <div className="right">
-              <Button>LOGIN</Button>
-            </div>
-        </Wrapper>
-      </HeaderBlock>
-      <Spacer />
-    </>
-  );
+    return (
+        <>
+            <HeaderBlock>
+                <Wrapper>
+                    <div className="logo">GAMSUNG</div>
+                    <div className="right">
+                        <Button>LOGIN</Button>
+                    </div>
+                </Wrapper>
+            </HeaderBlock>
+        </>
+    )
+        ;
 };
 
 export default Header;

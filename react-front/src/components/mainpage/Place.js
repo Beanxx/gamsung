@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import './MainPage.css';
 
 const PlaceBlock = styled.div`
-  position: relative;
+  display: flex;
   width: 70%;
   margin: 0 auto;
   height: 120px;
