@@ -1,5 +1,5 @@
 import './App.css';
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState, Suspense} from "react";
 import {BrowserRouter as Router, Link, Route, Switch} from "react-router-dom";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
@@ -19,30 +19,9 @@ function App() {
     const [articles, setArticles] = useState([])
 
     return (
-        <Router>
+        <Suspense fallback={(<div>Loading...</div>)}>
             <Header/>
-            {/*<HeaderBlock>*/}
-            {/*    <Wrapper>*/}
-            {/*        <Link to="/">*/}
-            {/*            <div className="logo">GAMSUNG</div>*/}
-            {/*        </Link>*/}
-            {/*        {authenticated ? (*/}
-            {/*            <LogoutButton logout={logout}/>*/}
-            {/*        ) : (*/}
-            {/*            <Link to="/login">*/}
-            {/*                <div className="right">*/}
-            {/*                    <Button>LOGIN</Button>*/}
-            {/*                </div>*/}
-            {/*            </Link>*/}
-            {/*        )}*/}
-            {/*        <Link to="/myPage">*/}
-            {/*            <button>마이페이지</button>*/}
-            {/*        </Link>*/}
-
-            {/*    </Wrapper>*/}
-            {/*    <Spacer/>*/}
-            {/*</HeaderBlock>*/}
-            <main>
+            <div style={{paddingTop: '69px', minHeight: 'calc(100vh - 80px)'}}>
                 <Switch>
                     <Route
                         exact path="/"
@@ -79,10 +58,9 @@ function App() {
                         component={MyPage}/>
 
                 </Switch>
-            </main>
-        </Router>
+            </div>
+        </Suspense>
     )
-        ;
 }
 
 export default App;
