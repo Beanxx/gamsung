@@ -10,6 +10,7 @@ import {signIn} from "./auth/auth";
 import styled from "styled-components";
 import Responsive from "./components/common/Responsive";
 import Button from "./components/common/Button";
+import Register from "./pages/Register"
 
 const HeaderBlock = styled.div`
   display: block;
@@ -52,16 +53,15 @@ function App() {
     const logout = () => setUser(null);
     const [articles, setArticles] = useState([])
 
-
-    useEffect(() => {
-        //flask 서버 ip & port
-        fetch(process.env.REACT_APP_FLASK_HOST, {
-            'method': 'GET',
-            headers: {
-                'Content-Type': 'applications/json'
-            }
-        }).then(resp => resp.json()).then(resp => setArticles(resp)).catch(error => console.log(error))
-    }, [])
+    // useEffect(() => {
+    //     //flask 서버 ip & port
+    //     fetch(process.env.REACT_APP_FLASK_HOST, {
+    //         'method': 'GET',
+    //         headers: {
+    //             'Content-Type': 'applications/json'
+    //         }
+    //     }).then(resp => resp.json()).then(resp => setArticles(resp)).catch(error => console.log(error))
+    // }, [])
 
     return (
         <Router>
@@ -99,6 +99,12 @@ function App() {
                         path="/login"
                         render={props => (
                             <Login authenticated={authenticated} login={login} {...props} />
+                        )}
+                    />
+                    <Route
+                        path="/register"
+                        render={props => (
+                            <Register/>
                         )}
                     />
                     <AuthRoute
