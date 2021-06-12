@@ -1,9 +1,5 @@
 import React from 'react';
 import styled from "styled-components";
-import Infomation_user from "./Infomation_user"
-import Infomation_reservation from "./Infomation_reservation";
-
-
 
 const TestBlock = styled.div`
   position: relative;
@@ -15,19 +11,16 @@ const TestBlock = styled.div`
   border-top-right-radius:15px;
 `;
 
-const clickPage = "user"
 
-const myInfo = () => {
+const myInfoReservation = () => {
     return (
         <TestBlock>
             <div>
-                {
-                    clickPage == "user" ? <Infomation_user/> : <Infomation_reservation/>
-                }
-            </div>
+                <h5>reservation</h5>
+             </div>
 
         </TestBlock>
     );
 };
 
-export default myInfo;
+export default myInfoReservation;

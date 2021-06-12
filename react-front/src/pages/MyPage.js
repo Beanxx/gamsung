@@ -8,7 +8,14 @@ const MypageDiv = styled.div`
   width: 100%;
   height:800px;
   background: yellow;
+  padding-top: 8%;
+  margin: auto 0;  
 `;
+
+function handleClick(e) {
+    e.preventDefault();
+    console.log('The link was clicked.');
+  }
 
 
 function MyPage() {
