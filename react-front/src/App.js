@@ -11,6 +11,7 @@ import styled from "styled-components";
 import Responsive from "./components/common/Responsive";
 import Button from "./components/common/Button";
 import Register from "./pages/Register"
+import StoreListPage from "./pages/StoreListPage";
 
 const HeaderBlock = styled.div`
   display: block;
@@ -101,17 +102,28 @@ function App() {
                             <Login authenticated={authenticated} login={login} {...props} />
                         )}
                     />
+
                     <Route
                         path="/register"
                         render={props => (
                             <Register/>
                         )}
                     />
-                    <AuthRoute
-                        authenticated={authenticated}
+
+                    {/*<AuthRoute*/}
+                    {/*    authenticated={authenticated}*/}
+                    {/*    path="/myPage"*/}
+                    {/*    render={props => <MyPage user={user} {...props} />}*/}
+                    {/*/>*/}
+
+                    <Route
+                        path="/storeList"
+                        component={StoreListPage}/>
+
+                    <Route
                         path="/myPage"
-                        render={props => <MyPage user={user} {...props} />}
-                    />
+                        component={MyPage}/>
+
                 </Switch>
             </main>
         </Router>
