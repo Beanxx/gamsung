@@ -110,19 +110,19 @@ function App() {
                         )}
                     />
 
-                    <AuthRoute
-                        authenticated={authenticated}
-                        path="/myPage"
-                        render={props => <MyPage user={user} {...props} />}
-                    />
+                    {/*<AuthRoute*/}
+                    {/*    authenticated={authenticated}*/}
+                    {/*    path="/myPage"*/}
+                    {/*    render={props => <MyPage user={user} {...props} />}*/}
+                    {/*/>*/}
 
                     <Route
                         path="/storeList"
                         component={StoreListPage}/>
 
-                    {/*<Route*/}
-                    {/*    path="/myPage"*/}
-                    {/*    component={MyPage}/>*/}
+                    <Route
+                        path="/myPage"
+                        component={MyPage}/>
 
                 </Switch>
             </main>
