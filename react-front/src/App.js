@@ -17,6 +17,8 @@ import { useMediaQuery } from 'react-responsive'
 //   const isDesktopOrLaptop = useMediaQuery(
 //      styles.headerContainer
 //   )
+import Register from "./pages/Register"
+import StoreListPage from "./pages/StoreListPage";
 
 const HeaderBlock = styled.div`
   position: fixed;
@@ -56,16 +58,15 @@ function App() {
     const logout = () => setUser(null);
     const [articles, setArticles] = useState([])
 
-
-    useEffect(() => {
-        //flask 서버 ip & port
-        fetch(process.env.REACT_APP_FLASK_HOST, {
-            'method': 'GET',
-            headers: {
-                'Content-Type': 'applications/json'
-            }
-        }).then(resp => resp.json()).then(resp => setArticles(resp)).catch(error => console.log(error))
-    }, [])
+    // useEffect(() => {
+    //     //flask 서버 ip & port
+    //     fetch(process.env.REACT_APP_FLASK_HOST, {
+    //         'method': 'GET',
+    //         headers: {
+    //             'Content-Type': 'applications/json'
+    //         }
+    //     }).then(resp => resp.json()).then(resp => setArticles(resp)).catch(error => console.log(error))
+    // }, [])
 
     return (
         <Router>
@@ -103,11 +104,28 @@ function App() {
                             <Login authenticated={authenticated} login={login} {...props} />
                         )}
                     />
-                    <AuthRoute
-                        authenticated={authenticated}
-                        path="/myPage"
-                        render={props => <MyPage user={user} {...props} />}
+
+                    <Route
+                        path="/register"
+                        render={props => (
+                            <Register/>
+                        )}
                     />
+
+                    {/*<AuthRoute*/}
+                    {/*    authenticated={authenticated}*/}
+                    {/*    path="/myPage"*/}
+                    {/*    render={props => <MyPage user={user} {...props} />}*/}
+                    {/*/>*/}
+
+                    <Route
+                        path="/storeList"
+                        component={StoreListPage}/>
+
+                    <Route
+                        path="/myPage"
+                        component={MyPage}/>
+
                 </Switch>
             </main>
         </Router>

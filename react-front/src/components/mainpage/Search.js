@@ -1,6 +1,8 @@
 import React, {useCallback, useEffect, useState} from 'react';
 import styled from 'styled-components';
 import palette from '../../lib/styles/palette';
+import {Link, Route} from "react-router-dom";
+import StoreListPage from "../../pages/StoreListPage";
 
 const ImageBlock = styled.div`
   display: flex;
@@ -106,7 +108,10 @@ const Search = ({tags, onChangeTags}) => {
                         value={input}
                         onChange={onChange}
                     />
-                    <button type="submit">검색</button>
+                    <form action="/storeList">
+                        <button type="submit">검색</button>
+                    </form>
+
                 </SearchForm>
             </SearchBlock>
         </ImageBlock>
