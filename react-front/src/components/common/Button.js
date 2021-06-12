@@ -3,20 +3,27 @@ import styled, {css} from 'styled-components';
 import {Link} from 'react-router-dom';
 import palette from '../../lib/styles/palette';
 
+const sizes = {
+    desktop: 1024,
+    tablet: 512
+};
 
 const buttonStyle = css`
+  width: 100%;
+  height: 100%;
+  display: flex;
   border: none;
-  border-radius: 4px;
+  border-radius: 10px;
   font-size: 1rem;
   font-weight: bold;
   padding: 0.25rem 1rem;
-  color: white;
+  color: black;
   outline: none;
   cursor: pointer;
   
-  background: ${palette.gray[8]};
+  background: ${palette.gray[2]};
   &:hover {
-    background: ${palette.gray[6]};
+    background: ${palette.gray[5]};
   }
 
   ${props =>
@@ -36,6 +43,7 @@ const StyledButton = styled.button`
 const StyledLink = styled(Link)`
   ${buttonStyle}
 `;
+
 
 const Button = props => {
     return props.to ? (

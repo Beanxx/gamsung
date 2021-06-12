@@ -1,0 +1,29 @@
+@font-face {
+    font-family: "Noto Serif KR";
+    src: url("../../styles/fonts/NotoSerifKR-Light.otf");
+}
+
+.place-title {
+    font-family: 'Noto Serif KR', serif;
+    justify-content: center;
+    align-items: center;
+    font-size: 15pt;
+}
+
+.place-boxall {
+    display: flex;
+    justify-content: space-between;
+}
+
+.place-box {
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.place-pic {
+    height: 80px;
+    width: 100px;
+    justify-content: center;
+    align-items: center;
+}

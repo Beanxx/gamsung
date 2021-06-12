@@ -6,7 +6,7 @@ import Button from './Button';
 const HeaderBlock = styled.div`
   position: fixed;
   width: 70%;
-  background: #ced4da;
+  background: back;
   top: 0;
   left: 0;
   right: 0;
