@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 import {Link} from "react-router-dom";
+import myInfo from "./Infomation";
 
 const TestBlock = styled.div`
   position: relative;
@@ -18,28 +19,38 @@ const tabStyle = {
     float: 'left',
     display: 'block',
     width: '100%',
-    height: '12%',
+    height: '9%',
     background: 'skyblue',
     marginTop: '3%',
-    paddingTop:'5%',
+
     textAlign: 'right',
-    borderRadius:'5px',
+    borderRadius: '5px',
     fontSize: '2em',
+
 
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
     overflow: 'hidden',
 };
 
+
 function Tab(props) {
+
+    function handleClick(e) {
+        e.preventDefault();
+        alert('hi');
+        myInfo
+    }
+
     return (
         <Link to="/">
-            <div style={tabStyle}>
+            <div style={tabStyle} onClick={handleClick}>
                 {props.inputText}
             </div>
         </Link>
     );
 }
+
 
 const tabList = () => {
     return (

@@ -12,11 +12,6 @@ const MypageDiv = styled.div`
   margin: auto 0;  
 `;
 
-function handleClick(e) {
-    e.preventDefault();
-    console.log('The link was clicked.');
-  }
-
 
 function MyPage() {
     return (

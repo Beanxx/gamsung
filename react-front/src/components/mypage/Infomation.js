@@ -1,8 +1,7 @@
-import React from 'react';
+import React, {Component} from 'react';
 import styled from "styled-components";
 import Infomation_user from "./Infomation_user"
 import Infomation_reservation from "./Infomation_reservation";
-
 
 
 const TestBlock = styled.div`
@@ -15,19 +14,28 @@ const TestBlock = styled.div`
   border-top-right-radius:15px;
 `;
 
-const clickPage = "user"
 
-const myInfo = () => {
-    return (
-        <TestBlock>
-            <div>
-                {
-                    clickPage == "user" ? <Infomation_user/> : <Infomation_reservation/>
-                }
-            </div>
+class myInfo extends Component {
 
-        </TestBlock>
-    );
+    constructor(props) {
+        super(props);
+        this.state = {
+            clickPage: props.clickPage
+        };
+    }
+
+    render() {
+        return (
+            <TestBlock>
+                <div>
+                    {
+                        this.state.clickPage == "user" ? <Infomation_user/> : <Infomation_reservation/>
+                    }
+                </div>
+
+            </TestBlock>
+        );
+    }
 };
 
 export default myInfo;
