@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 import {Link} from "react-router-dom";
-import myInfo from "./Infomation";
+import MyInfo from "./Infomation";
 
 const TestBlock = styled.div`
   position: relative;
@@ -36,15 +36,13 @@ const tabStyle = {
 
 function Tab(props) {
 
-    function handleClick(e) {
-        e.preventDefault();
-        alert('hi');
-        myInfo
-    }
+    //TabList에서 클릭된 페이지를 Mypage에 반환
+    //Mypage에서 MyInfo에 해당 값 반환
+    //페이지 전환
 
     return (
         <Link to="/">
-            <div style={tabStyle} onClick={handleClick}>
+            <div style={tabStyle} >
                 {props.inputText}
             </div>
         </Link>

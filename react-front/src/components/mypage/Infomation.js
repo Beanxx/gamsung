@@ -20,19 +20,16 @@ class myInfo extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            clickPage: props.clickPage
+            clickPage: "user"
         };
     }
 
     render() {
         return (
             <TestBlock>
-                <div>
                     {
                         this.state.clickPage == "user" ? <Infomation_user/> : <Infomation_reservation/>
                     }
-                </div>
-
             </TestBlock>
         );
     }

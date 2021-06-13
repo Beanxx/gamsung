@@ -14,6 +14,7 @@ const MypageDiv = styled.div`
 
 
 function MyPage() {
+
     return (
         <MypageDiv>
             <TabList/>
