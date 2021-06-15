@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import styled from "styled-components";
 import {Link} from "react-router-dom";
 import MyInfo from "./Infomation";
@@ -33,6 +33,10 @@ const tabStyle = {
     overflow: 'hidden',
 };
 
+function handleClick(e) {
+    alert('hi')
+}
+
 
 function Tab(props) {
 
@@ -41,8 +45,8 @@ function Tab(props) {
     //페이지 전환
 
     return (
-        <Link to="/">
-            <div style={tabStyle} >
+        <Link to="/mypage">
+            <div style={tabStyle} onClick={props.handleClick}>
                 {props.inputText}
             </div>
         </Link>
@@ -50,13 +54,33 @@ function Tab(props) {
 }
 
 
-const tabList = () => {
-    return (
-        <TestBlock>
-            <Tab inputText="회원 정보"/>
-            <Tab inputText="예약 확인"/>
-        </TestBlock>
-    );
+class tabList extends Component {
+
+    state = {
+        clicked: "",
+    }
+
+    handleClick = (e) => {
+        this.setState({
+            clicked: e.target.value
+        });
+    }
+
+    handleSubmit = (e) => {
+        e.preventDefault();
+        this.props.onCreate(this.state);
+    }
+
+    render() {
+
+
+        return (
+            <TestBlock>
+                <Tab inputText="회원 정보" onClick={this.handleClick}/>
+                <Tab inputText="예약 확인" onClick={this.handleClick}/>
+            </TestBlock>
+        );
+    }
 };
 
 export default tabList;

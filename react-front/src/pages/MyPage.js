@@ -1,7 +1,8 @@
-import React from "react";
+import React, {Component} from "react";
 import TabList from "../components/mypage/TabList";
-import MyInfo from "../components/mypage/Infomation";
 import styled from "styled-components";
+import Infomation_user from "../components/mypage/Infomation_user";
+import Infomation_reservation from "../components/mypage/Infomation_reservation";
 
 const MypageDiv = styled.div`
   position: relative;
@@ -13,14 +14,29 @@ const MypageDiv = styled.div`
 `;
 
 
-function MyPage() {
+class MyPage extends Component {
 
-    return (
-        <MypageDiv>
-            <TabList/>
-            <MyInfo/>
-        </MypageDiv>
-    );
+    constructor(props) {
+        super(props);
+        this.state = {
+            clickPage: "user"
+        };
+    };
+
+
+    handleCreate = (data) => {
+    alert(data);
+  }
+
+
+    render() {
+        return (
+            <MypageDiv>
+                <TabList onCreate={this.handleCreate}/>
+                {this.state.clickPage == "reservation" ? <Infomation_reservation/> : <Infomation_user/>}
+            </MypageDiv>
+        );
+    }
 }
 
 export default MyPage;
