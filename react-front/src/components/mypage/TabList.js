@@ -33,51 +33,43 @@ const tabStyle = {
     overflow: 'hidden',
 };
 
-function handleClick(e) {
-    alert('hi')
-}
-
-
-function Tab(props) {
-
-    //TabList에서 클릭된 페이지를 Mypage에 반환
-    //Mypage에서 MyInfo에 해당 값 반환
-    //페이지 전환
-
-    return (
-        <Link to="/mypage">
-            <div style={tabStyle} onClick={props.handleClick}>
-                {props.inputText}
-            </div>
-        </Link>
-    );
-}
-
 
 class tabList extends Component {
+
+    constructor(props) {
+        super(props);
+        this.handleClick = this.handleClick.bind(this);
+    }
 
     state = {
         clicked: "",
     }
 
+    //e.target.value만 넘겨주면 페이지 전환
     handleClick = (e) => {
         this.setState({
             clicked: e.target.value
         });
-    }
-
-    handleSubmit = (e) => {
         e.preventDefault();
         this.props.onCreate(this.state);
     }
+
 
     render() {
 
 
         return (
             <TestBlock>
-                <Tab inputText="회원 정보" onClick={this.handleClick}/>
-                <Tab inputText="예약 확인" onClick={this.handleClick}/>
+                <Link to="/mypage">
+                    <div style={tabStyle} onClick={this.handleClick}>
+                        회원 정보
+                    </div>
+                </Link>
+                <Link to="/mypage">
+                    <div style={tabStyle} onClick={this.handleClick}>
+                        예약 확인
+                    </div>
+                </Link>
             </TestBlock>
         );
     }

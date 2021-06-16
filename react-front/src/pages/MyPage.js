@@ -21,11 +21,16 @@ class MyPage extends Component {
         this.state = {
             clickPage: "user"
         };
+        this.handleCreate = this.handleCreate.bind(this);
     };
 
 
     handleCreate = (data) => {
     alert(data);
+    this.setState({
+            clickPage: data
+        });
+    console.log('hi');
   }
 
 
