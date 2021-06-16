@@ -8,7 +8,7 @@ const TestBlock = styled.div`
   width: 55%;
   height:600px;
   background: red;
-  border-top-right-radius:15px;
+  border-radius:8px;
 `;
 
 

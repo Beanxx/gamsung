@@ -8,7 +8,6 @@ const MypageDiv = styled.div`
   position: relative;
   width: 100%;
   height:800px;
-  background: yellow;
   padding-top: 8%;
   margin: auto 0;  
 `;
