@@ -11,6 +11,14 @@ const TestBlock = styled.div`
   border-radius:8px;
 `;
 
+const contents = () => {
+    return(
+        <div>
+
+        </div>
+    );
+}
+
 
 const myInfoUser = () => {
     return (
