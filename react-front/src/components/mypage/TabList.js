@@ -20,7 +20,7 @@ const tabStyle = {
     width: '100%',
     height: '9%',
     marginTop: '3%',
-    paddingRight: '2%',
+    paddingRight: '4%',
 
 
     color: '#646464',

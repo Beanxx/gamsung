@@ -1,20 +1,30 @@
 import React from 'react';
 import styled from "styled-components";
+import "./infomation_user.css";
 
 const TestBlock = styled.div`
   position: relative;
   float: left;
   display: inline-block;
   width: 55%;
-  height:600px;
+  height:300px;
   background: red;
   border-radius:8px;
 `;
 
-const contents = () => {
-    return(
-        <div>
+const divStyle ={
+    paddingTop:'2%',
 
+}
+
+function Contents(props) {
+
+    return(
+        <div class="infoBlock">
+            <div class="infoProperty">
+                {props.property}
+            </div>
+            <input class="infoInput" placeholder={props.detail}/>
         </div>
     );
 }
@@ -22,11 +32,9 @@ const contents = () => {
 
 const myInfoUser = () => {
     return (
-        <TestBlock>
-            <div>
-                <h5>user</h5>
-            </div>
-
+        <TestBlock style={divStyle}>
+            <Contents property="이름" detail="냥냥이"/>
+            <Contents property="관심 지역" detail="홍대"/>
         </TestBlock>
     );
 };
