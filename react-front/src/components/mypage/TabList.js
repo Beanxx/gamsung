@@ -8,7 +8,7 @@ const TestBlock = styled.div`
   float: left;
   display: inline-block;
   width: 25%;
-  height:600px;
+  height:550px;
   border-radius:5px;
   
 `;
