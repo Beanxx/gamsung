@@ -9,7 +9,7 @@ const MypageDiv = styled.div`
   width: 100%;
   height:800px;
   padding-top: 8%;
-  margin: auto 0;  
+  margin-left: 5%;  
 `;
 
 
