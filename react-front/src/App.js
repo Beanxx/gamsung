@@ -20,7 +20,7 @@ function App() {
 
     return (
         <Suspense fallback={(<div>Loading...</div>)}>
-            <Header/>
+            <Header authenticated={authenticated} logout={logout}/>
             <div style={{paddingTop: '69px', minHeight: 'calc(100vh - 80px)'}}>
                 <Switch>
                     <Route
@@ -35,20 +35,12 @@ function App() {
                             <Login authenticated={authenticated} login={login} {...props} />
                         )}
                     />
-
                     <Route
                         path="/register"
                         render={props => (
                             <Register/>
                         )}
                     />
-
-                    {/*<AuthRoute*/}
-                    {/*    authenticated={authenticated}*/}
-                    {/*    path="/myPage"*/}
-                    {/*    render={props => <MyPage user={user} {...props} />}*/}
-                    {/*/>*/}
-
                     <Route
                         path="/storeList"
                         component={StoreListPage}/>
