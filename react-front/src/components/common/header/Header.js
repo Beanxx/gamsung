@@ -12,13 +12,9 @@ const Header = (authenticated, logout) => {
             </div>
             <div className="header_container">
                 <div className="sign_menu">
-                    {authenticated ? (
-                        <LogoutButton mode="horizontal" logout={logout}/>
-                    ) : (
-                        <Link to="/login">
-                            <Sign mode="horizontal"/>
-                        </Link>
-                    )}
+                    <Link to="/login">
+                        <Sign mode="horizontal" authenticated={authenticated} logout={logout}/>
+                    </Link>
                 </div>
             </div>
         </nav>

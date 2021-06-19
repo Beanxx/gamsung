@@ -9,7 +9,7 @@ function Sign(props, {authenticated, logout, history}) {
     }
 
     return (
-        authenticated ?
+        !authenticated ?
             <Menu mode={props.mode}>
                 <Menu.Item key="mail">
                     <Link to="/login">로그인</Link>
