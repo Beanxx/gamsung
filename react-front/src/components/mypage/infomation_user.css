@@ -1,0 +1,23 @@
+.infoBlock{
+    display: block;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.infoProperty{
+    width: 20%;
+    display: inline-block;
+    padding-right: 2%;
+    margin-left: 10%;
+    margin-right: 2%;
+
+    text-align: right;
+    vertical-align: center;
+    font-size: 1.3em;
+}
+
+.infoInput{
+    width: 45%;
+    height: 2.4em;
+    display: inline-block;
+}

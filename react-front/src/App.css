@@ -3,3 +3,13 @@
     min-height: 100vh;
     color: black;
 }
+
+.default-link {
+    text-decoration: none;
+    color: black;
+}
+
+@font-face {
+  font-family: "Caveat";
+  src: url("../src/styles/fonts/Caveat-Regular.ttf");
+}

@@ -1,34 +1,32 @@
 import React, {useCallback, useEffect, useState} from 'react';
 import styled from 'styled-components';
 import palette from '../../lib/styles/palette';
-import {Link, Route} from "react-router-dom";
-import StoreListPage from "../../pages/StoreListPage";
 
 const ImageBlock = styled.div`
-  position: relative;
-  width: 100%;
+  display: flex;
+  width: 70%;
+  margin: 0 auto;
   height:200px;
-  background: #868e96;
+  background-image: url("https://cdn.pixabay.com/photo/2016/11/29/12/54/cafe-1869656__340.jpg")
 `;
 
 const SearchBlock = styled.div`
   width: 100%;
   height: 100%;
-  display:flex;
+  display: flex;
   justify-content:center;
   align-items:center;
-  border-top: 1px solid ${palette.gray[2]};
-  padding-top: 2rem;
-  h4 {
-    color: ${palette.gray[8]}
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-  }
+  // border-top: 1px solid ${palette.gray[2]};
+  // padding-top: 2rem;
+  // h4 {
+  //   color: ${palette.gray[8]}
+  //   margin-top: 0;
+  //   margin-bottom: 0.5rem;
+  // }
 `;
 
 const SearchForm = styled.form`
-  border-radius: 4px;
-  overflow: hidden;
+  border-radius: 5px;
   display: flex;
   width: 400px;
   border: 1px solid ${palette.gray[9]}; /* 스타일 초기화 */
@@ -43,9 +41,13 @@ const SearchForm = styled.form`
     flex: 1;
   }
   button {
+    // width: 100%;
+    // height: 100%;
+    display: flex;
     cursor: pointer;
     padding-right: 1rem;
     padding-left: 1rem;
+    padding-top:7px;
     border: none;
     background: ${palette.gray[8]};
     color: white;
@@ -53,7 +55,6 @@ const SearchForm = styled.form`
     &:hover {
       background: ${palette.gray[6]};
     }
-  }
 `;
 
 
@@ -103,16 +104,18 @@ const Search = ({tags, onChangeTags}) => {
             <SearchBlock>
                 <SearchForm onSubmit={onSubmit}>
                     <input
-                        placeholder="검색"
+                        placeholder="원하는 카페를 검색해보세요."
                         value={input}
                         onChange={onChange}
                     />
                     <form action="/storeList">
-                        <button type="submit">검색</button>
+                        <div className="right">
+                            <button onClick="location.href='http://www.naver.com'">검색</button>
+                        </div>
                     </form>
-
                 </SearchForm>
             </SearchBlock>
+
         </ImageBlock>
     );
 };
