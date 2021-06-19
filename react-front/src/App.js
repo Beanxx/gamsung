@@ -85,14 +85,16 @@ function App() {
                             </div>
                         </Link>
                     )}
-                    {/*<Link to="/myPage" className="default-link">*/}
-                    {/*    <button>마이페이지</button>*/}
-                    {/*</Link>*/}
+                    <Link to="/myPage" className="default-link">
+                        <div className="right">
+                            <Button>마이페이지</Button>
+                        </div>
+                    </Link>
 
                 </Wrapper>
 
             </HeaderBlock>
-                <Spacer/>
+            <Spacer/>
             <main>
                 <Switch>
                     <Route
