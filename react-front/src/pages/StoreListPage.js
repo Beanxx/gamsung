@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Component} from "react";
 import StoreList from "../components/storeListPage/StoreList"
 import styled from "styled-components";
 import Map from "../components/storeListPage/Map";
@@ -8,19 +8,40 @@ const StoreListDiv = styled.div`
   width: 100%;
   height:800px;
   background: yellow;
+  display:block;
 `;
 
 
-function StoreListPage() {
+class StoreListPage extends Component{
+
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            clickPage: "user"
+        };
+        this.handleCreate = this.handleCreate.bind(this);
+    };
+
+
+    handleCreate = (data) => {
+    alert(data);
+    this.setState({
+            clickPage: data
+        });
+    console.log('bye');
+  }
+
+    render() {
+
+
     return (
-        <div>
-            <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=75e9922383f1ead03a8206ebf0d60456"></script>
             <StoreListDiv>
-                <StoreList/>
+                <StoreList onCreate={this.handleCreate}/>
                 <Map/>
             </StoreListDiv>
-        </div>
     );
+    }
 }
 
 export default StoreListPage;
