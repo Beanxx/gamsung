@@ -1,13 +1,13 @@
 import React, {useState} from "react";
-import { Redirect } from 'react-router-dom';
+import {Redirect} from 'react-router-dom';
 
 function Login({authenticated, login, location}) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const handleClick = () => {
+    const handleClick = async () => {
         try {
-            login({email, password});
+                login({email, password});
         } catch (e) {
             alert("failed to login");
             setEmail("");
@@ -15,7 +15,7 @@ function Login({authenticated, login, location}) {
         }
     };
 
-    const { from } = location.state || { from : { pathname: "/"}};
+    const {from} = location.state || {from: {pathname: "/"}};
     if (authenticated) return <Redirect to={from}/>;
 
     return (
