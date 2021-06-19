@@ -20,8 +20,6 @@ export async function signIn({email, password}) {
         user = data['user'];
         console.log(user)
     }
-    if (user)
-        return user;
-    else
-        throw new Error()
+    if (user === undefined) throw new Error();
+    else return user;
 }
