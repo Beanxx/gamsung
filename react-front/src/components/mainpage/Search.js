@@ -1,6 +1,7 @@
 import React, {useCallback, useEffect, useState} from 'react';
 import styled from 'styled-components';
 import palette from '../../lib/styles/palette';
+import {Link} from "react-router-dom";
 
 const ImageBlock = styled.div`
   display: flex;
@@ -11,18 +12,11 @@ const ImageBlock = styled.div`
 `;
 
 const SearchBlock = styled.div`
+  display: flex;
   width: 100%;
   height: 100%;
-  display: flex;
   justify-content:center;
   align-items:center;
-  // border-top: 1px solid ${palette.gray[2]};
-  // padding-top: 2rem;
-  // h4 {
-  //   color: ${palette.gray[8]}
-  //   margin-top: 0;
-  //   margin-bottom: 0.5rem;
-  // }
 `;
 
 const SearchForm = styled.form`
@@ -35,20 +29,20 @@ const SearchForm = styled.form`
     outline: none;
     border: none;
     font-size: 1rem;
+    width: 100%;
+    height: 100%;
   }
   input {
     padding: 0.5rem;
     flex: 1;
   }
   button {
-    // width: 100%;
-    // height: 100%;
-    display: flex;
     cursor: pointer;
     padding-right: 1rem;
     padding-left: 1rem;
     padding-top:7px;
-    border: none;
+    border: solid ${palette.gray[8]};
+    border-radius: 5px;
     background: ${palette.gray[8]};
     color: white;
     font-weight: bold;
@@ -108,14 +102,13 @@ const Search = ({tags, onChangeTags}) => {
                         value={input}
                         onChange={onChange}
                     />
-                    <form action="/storeList">
+                    <Link to="./storeList" className="default-link">
                         <div className="right">
-                            <button onClick="location.href='http://www.naver.com'">검색</button>
+                            <button>검색</button>
                         </div>
-                    </form>
+                    </Link>
                 </SearchForm>
             </SearchBlock>
-
         </ImageBlock>
     );
 };
