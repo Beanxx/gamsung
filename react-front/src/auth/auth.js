@@ -21,5 +21,5 @@ export async function signIn({email, password}) {
         console.log(user)
     }
     if (user === undefined) throw new Error();
-    else return user;
+    return user;
 }
